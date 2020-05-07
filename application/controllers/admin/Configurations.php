@@ -34,9 +34,6 @@ class Configurations extends CI_Controller
 			$this->load->view('templates/dashboard/footer');
 		} else {
 			if (!empty($_FILES['image']['name'])) {
-				if (!is_dir('storage/configuration/images')) {
-				    mkdir('storage/configuration/images', 0777, TRUE);
-			    }
 				$img_upload = doUploadImage('configuration/images');
 				deleteFile("configuration/images", $this->input->post('image_hidden', true));
 
@@ -55,7 +52,7 @@ class Configurations extends CI_Controller
 				redirect('admin/configurations');
 			}
 
-			if ($data['about'] == null) {
+			if ($data['configurations'] == null) {
 				$configuration = [
 					'title' => $this->input->post('title',  true),
 					'short_title' => $this->input->post('short_title',  true),
