@@ -40,6 +40,7 @@ class Home extends CI_Controller
 
 			$start_img = strpos($value->content, '<img src="');
 			$end_img = strpos($value->content, '">', $start_img);
+			$end_img = empty($end_img) ? strpos($value->content, ' xss=', $start_img) : $end_img;
 			$src_image = substr($value->content, $start_img+10, $end_img-$start_img-10);
 
 			if (strlen($paragraph) > 147) {

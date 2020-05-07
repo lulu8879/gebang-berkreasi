@@ -175,11 +175,10 @@ class Blog extends CI_Controller
 
 	public function uploadImage()
 	{
-		// $id = $this->input->get('id');
 		$this->load->library('upload');
 		if(isset($_FILES["image"]["name"])){
 	        $config['upload_path'] = './storage/blogs/images/';
-	        $config['allowed_types'] = 'jpg|jpeg|png|gif';
+	        $config['allowed_types'] = "gif|jpg|jpeg|png|jfif|bmp|webp";
 	        $this->upload->initialize($config);
 	        if(!$this->upload->do_upload('image')){
 	            $this->upload->display_errors();

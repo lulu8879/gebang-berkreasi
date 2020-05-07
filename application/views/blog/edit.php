@@ -25,7 +25,7 @@
 							<div class="col-sm-10">
 								<div class="ibox float-e-margins">
 									<div class="ibox-content no-padding">
-										<textarea name="content" class="summernote" id="blog" data-id="<?= $blog->id;?>"><?= $blog == null ? '' : $blog->content; ?></textarea>
+										<textarea name="content" class="summernote" id="blog"><?= $blog == null ? '' : $blog->content; ?></textarea>
 									</div>
 								</div>
 								<?= form_error('content', '<small class="text-danger">', '</small>'); ?>
